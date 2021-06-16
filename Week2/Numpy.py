@@ -28,11 +28,14 @@ large_rand = np.random.randint(0, 100, size=10_000).reshape(100, 100)
 
 # Do basic operations on the matrix, like multiplication and addition and print the output
 
+large_copy = large_rand.copy()
 mmult = large_rand * 3
 
-# Create a matrix of ones and then zeros
+# multiple 2 matrices
 
+new_m = np.matmul(large_copy, mmult)
+print(new_m)
+
+# Create a matrix of ones and then zeros
 a = np.zeros((10, 10), int)
 np.fill_diagonal(a, 1)
-
-print(a)
