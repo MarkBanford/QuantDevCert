@@ -16,6 +16,9 @@ df.at[df.index[-1], 'C'] = 1.0
 
 df.at[df.index[[-2, 5]], 'B'] = np.nan
 
-
 df = df.fillna(method='ffill')
-print(df)
+
+# Filtering
+
+df_filter = df[(df.index > '2018-01-05') & (df['B'] < 0.3)]
+print(df_filter)
